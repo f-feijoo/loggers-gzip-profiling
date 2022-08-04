@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("templates/head")   %>
+<body>
+    <div class="container mt-5">
+        <table class="table table-success table-striped table-hover">
+            <thead>
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.map((x) => { %>
+                <tr>
+                <th scope="row"><%= x.id %></th>
+                <td><%= x.title %></td>
+                <td>$<%= x.price %></td>
+                <td><img src=<%= x.thumbnail %> class="img-fluid" alt="..."></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <div class="container mt-5">
+        <a class="btn btn-primary" href="/">Ir a página principal</a>
+    </div>
+</body>
+</html>

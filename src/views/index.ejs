@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("templates/head")   %>
+<body>
+    <div class="container mt-5">
+        <h1>Bienvenido <%= user %></h1>
+        <br>
+        <br>
+        <button onclick="location.href='/logout'" class="btn btn-success">Log out</button> 
+    </div>  
+    <div class="container mt-5">
+        <form onsubmit="return addInfo()">
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="title">Titulo</label>
+                    <input class="form-control" type="text" name="title" placeholder="Title" id="title">
+                </div>
+                <div class="col">
+                    <label class="form-label" for="price">Precio</label>
+                    <input class="form-control" type="number" name="price" placeholder="Price" id="price">
+                </div>
+                <div class="col">
+                    <label class="form-label" for="img">Imagen</label>
+                    <input class="form-control" type="text" name="thumbnail" placeholder="Thumbnail" id="img">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Guardar</button>    
+        </form>
+    </div>
+    <div class="container mt-5">
+        <table class="table table-success table-striped table-hover">
+            <thead>
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody class="overflow-auto" id="caja">
+            </tbody>
+        </table>
+    </div>
+    <div class="container mt-5 border border-dark rounded">
+        <h1 class="text-center">Centro de mensajes</h1>
+        <br>
+        <form onsubmit="return addMessage()">
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <br>
+            <br>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+            <br>
+            <br>
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+            <br>    
+            <br>        
+            <input type="number" name="edad" id="edad" placeholder="Edad" required>
+            <br>     
+            <br>       
+            <input type="text" name="alias" id="alias" placeholder="Alias" required>
+            <br>  
+            <br>          
+            <input type="text" name="Avatar" id="avatar" placeholder="Avatar" required>
+            <br>
+            <br>
+            <div id="c-mensajes" class="bg-secondary overflow-auto" style="--bs-bg-opacity: .5; max-height: 250px;"></div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col">            
+                    <input type="text" name="text" id="text" placeholder="Mensaje" required>
+                    <button type="submit" class="btn btn-primary p-2 m-2">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
+</body>
+</html>
