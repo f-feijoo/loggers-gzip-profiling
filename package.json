@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "test": "node src/benchmark.js",
+    "start": "0x src/server.js",
     "cluster": "nodemon src/server.js --p 8080 --m CLUSTER",
     "fork": "nodemon src/server.js --p 8080 --m FORK"
   },
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/f-feijoo/loggers-gzip-profiling#readme",
   "dependencies": {
+    "autocannon": "^7.9.0",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
     "connect-mongo": "^4.6.0",

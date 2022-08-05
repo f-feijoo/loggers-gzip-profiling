@@ -7,7 +7,21 @@ const { Router } = express;
 
 let router = new Router();
 
-router.get("/", (req, res) => {
+router.get("/sin-console", (req, res) => {
+  res.send({
+    ArgumentosDeEntrada: args,
+    NombrePlataforma: process.platform,
+    VersionNode: process.version,
+    MemoriaTotalReservada: process.memoryUsage(),
+    PathEjecucion: process.execPath,
+    ProcessID: process.pid,
+    CarpetaProyecto: process.cwd(),
+    NumeroProcesadores: os.cpus().length
+  });
+});
+
+router.get("/con-console", (req, res) => {3
+  console.log('profiling')
   res.send({
     ArgumentosDeEntrada: args,
     NombrePlataforma: process.platform,
